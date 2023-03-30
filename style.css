@@ -1,0 +1,101 @@
+*{
+  margin:0;
+  padding: 0;
+}
+body{
+  overflow: hidden;
+}
+/* Using the game Container for making the background of the game */
+.gameContainer{
+  background-image: url(./Images/bg.png);                    
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+  width: 100%;
+  height: 100vh;
+}
+/* using the dino class for the positioning it */
+.dino{
+  background-image: url(./Images/dino.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 283px;
+  height: 144px;
+  position: absolute;
+  bottom: 0;
+  left: 52px;
+}
+/* using the obstacle class for the positioning it  */
+.obstacle{
+  background-image: url(./Images/dragon.png);
+  background-size: cover;
+  width: 166px;
+  height: 113px;
+  position: absolute;
+  bottom: 0;
+  left: 44vw;
+
+}
+.animateDino{
+  /* Creating a animation for dino  */
+  animation: dino 0.6s linear;     
+                                          
+}
+/* keyframes it helps in making n animation helps the dino do different stuff in different percentage  */
+@keyframes dino {
+  0%{
+      /* Intially the at 0% the dino should stay at the ground so bottom is made 0 */
+      bottom: 0;   
+  }
+  50%{
+      /* at 50% we made 422px as it will give the space from bottom and makes us feel its jumping   */
+      bottom: 1422px;
+  }
+  100%{
+      /* again at 100% we have made it bottom 0 so it comes back at the ground level */
+      bottom: 0;
+  }
+}
+
+.obstacleAni{
+      /* Creating a animation for obstalces  */
+
+  animation: obstacleAni 5s linear infinite;
+}
+
+
+@keyframes obstacleAni {
+  0%{
+      /* obstacle should move infinitly so at starting ie at 0% we have left 100vw so it moves till the 
+       end as background size of the game container is 100vw mention */
+      left: 100vw;
+  }
+  100%{
+      /* at 100% it when the game over means the collision happened we made it go back to the to the 
+      start with left -10vw that can anything of your choice! */
+      left: -10vw;
+  }
+  
+}
+/* A message at the center of the screen ie welcome to the game  */
+.gameOver{                                                      
+  position: relative;
+  top:63px;
+  font-size: 53px;
+  text-align: center;
+  font-family: sans-serif;
+
+}
+/* for showing the score count on the right side of the screen */
+#scoreCount{
+  font-size: 25px;
+  color:lightgray;
+  font-weight: bold;
+  position: absolute;
+  right:45px;
+  top:30px;
+  background-color: rgb(38, 37, 59);
+  border: 2px solid black;
+  font-family: sans-serif;
+  border-radius: 5px;
+  padding: 5px 7px;
+}
